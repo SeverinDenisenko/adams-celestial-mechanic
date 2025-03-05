@@ -52,7 +52,7 @@ int main()
     size_t digits = 50;
     mpfr::mpreal::set_default_prec(mpfr::digits2bits(digits));
 
-    odes::ode_t ode = [](odes::real_t t, odes::vector_t x) -> odes::vector_t {
+    odes::ode_t ode = []([[maybe_unused]] odes::real_t t, odes::vector_t x) -> odes::vector_t {
         odes::vector_t y(4);
 
         // pow is overrided for mpfr::mpreal

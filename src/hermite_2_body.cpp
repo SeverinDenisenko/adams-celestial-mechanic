@@ -67,7 +67,7 @@ int main()
     real_t dt_norm    = t / static_cast<integer_t>(t / dt);
     integer_t print_n = static_cast<integer_t>(t / dt_norm) / 100;
 
-    odes::interaction_function_t a = [](vector_t r, vector_t v, real_t m) -> vector_t {
+    odes::interaction_function_t a = [](vector_t r, [[maybe_unused]] vector_t v, real_t m) -> vector_t {
         real_t r3 = pow(odes::norm(r), 3);
         return -r * m / r3;
     };
